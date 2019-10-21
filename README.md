@@ -2,14 +2,51 @@
 
 ## 2 rules
 
- !   Never commit directly to master. Use feature branches   
- !   Always make sure git status is clean before pull, checkout or merge.
+ !   Nunca faça o commit direto no branch master. Use o devido branch da feature.   
+ !   Certifique-se que o git status esteja clean antes de dar os comandos pull, checkout ou merge.
+ 
+## Clonando o repositório
 
-## Listing local branches
+git clone git@github.com:liberom/festoo.git
+
+Não há necessiade de forkar para seu repositório! Faça isso só se quiser ter um backup.
+
+## Criando uma nova feature
+
+Crie um novo branch
+
+git co -b NOVO_BRANCH
+
+Faça as devidas alterações no código e envie seu branch para o repositório principal (origem)
+
+git push origin NOVO_BRANCH
+
+## Mudando de Branch
+
+Para mudar de branch basta usar o comando acima sem o "-b"
+
+git co master (por exemplo, mas poderia ser o nome de outro branch)
+
+## Atualizando os arquivos locais do seu computador
+
+git pull origin master (atualiza o branch master)
+git pull origin NOVO_BRANCH (atualiza o branch NOVO_BRANCH para seu computador)
+
+#### USE E ABUSE DOS SEGUINTES COMANDOS
+git status
+git branch -a (mostra a lista de todos os banches, locais e remotos)
+
+#### A melhor prática é fazer os pushs pelo terminal e solicitar os pull requests e realizar os merges pelo Github. Isso vai claro e simples e vai evitar confusão.
+
+
+
+## Outras orientações importantes
+
+### Listing local branches
 
 git branch
 
-## Working on a new branch
+### Working on a new branch
 
 git checkout -b customize-navbar   
 git branch
@@ -17,22 +54,22 @@ git branch
 We’ve created a new local branch called customize-navbar.   
 Any new commit will only be applied to this branch.
 
-## Pushing a branch to GitHub
+### Pushing a branch to GitHub
 
 git branch -a   
 git push origin customize-navbar   
 git branch -a
 
-## Finishing a feature
+### Finishing a feature
 
 Using branches, we work on different parts of a project at the same time.   
 When a feature is finished, we’d like to merge commits back in master.
 
 How?
 
-## GitHub Pull Requests
+### GitHub Pull Requests
 
-### Looping over
+## Looping over
 
 ### Getting master up to date
 
