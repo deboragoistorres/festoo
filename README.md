@@ -10,6 +10,7 @@
 git clone git@github.com:liberom/festoo.git
 
 Não há necessiade de forkar para seu repositório! Faça isso só se quiser ter um backup.
+#### Após clonar o repositório, rodar os comandos "bundle install" e "yarn install". Caso exista DB rodar "rails db:migrate"
 
 ## Criando uma nova feature
 
