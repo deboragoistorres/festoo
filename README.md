@@ -21,6 +21,7 @@ git co -b NOVO_BRANCH
 Faça as devidas alterações no código e envie seu branch para o repositório principal (origem)
 
 git push origin NOVO_BRANCH
+#### Depois de fazer um pull request deste branch e o código ter mergido com o master, é muito importante atualizar o master com o comando "git pull origin master"
 
 ## Mudando de Branch
 
@@ -30,11 +31,11 @@ git co master (por exemplo, mas poderia ser o nome de outro branch)
 
 ## Atualizando os arquivos locais do seu computador
 
-git pull origin master (atualiza o branch master)
-git pull origin NOVO_BRANCH (atualiza o branch NOVO_BRANCH para seu computador)
+git pull origin master (atualiza o branch master)   
+git pull origin NOVO_BRANCH (atualiza o branch NOVO_BRANCH para seu computador)    
 
 #### USE E ABUSE DOS SEGUINTES COMANDOS
-git status
+git status   
 git branch -a (mostra a lista de todos os banches, locais e remotos)
 
 #### A melhor prática é fazer os pushs pelo terminal e solicitar os pull requests e realizar os merges pelo Github. Isso vai claro e simples e vai evitar confusão.
