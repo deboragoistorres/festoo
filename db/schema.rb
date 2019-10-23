@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_000754) do
+
+ActiveRecord::Schema.define(version: 2019_10_23_151506) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "b_date"
+    t.date "e_date"
+    t.boolean "payment_status"
+    t.integer "sched_qty"
+    t.string "deliv_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -21,7 +33,6 @@ ActiveRecord::Schema.define(version: 2019_10_23_000754) do
     t.string "category"
     t.float "price"
     t.boolean "status", default: true
-    t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_000754) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
