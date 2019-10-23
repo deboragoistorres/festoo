@@ -1,13 +1,30 @@
-<%= simple_form_for @product do |f| %>
-    <div class="form-group m-5">
-      <%= f.input :name, label:"Nome do produto" %>
-      <%= f.input :description, label:"Descrição do produto" %>
-      <%= f.input :name, label:"Nome do produto" %>
-      <%= f.input :name, label:"Nome do produto" %>
-      <%= f.button :submit, class:"btn btn-light" %>
-    <% end %>
-      <%= link_to "Voltar", cocktails_path, class:'btn btn-light' %>
+<div class="container m-5 p-5">
+  <form>
+    <div class="form-group">
+      <%= simple_form_for(@product) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class:'form-control sm-3 mb-2' %>
     </div>
-
-<!-- CRIAR AS CATEGORIAS DOS PRODUTOS E OLHAR O EXEMPLO LÁ DO RESTAURANTES
-PARA FAZER O ARRAY E O VALIDATIONS -->
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description, class:'form-control sm-3 mb-2' %>
+    </div>
+    <div>
+      <%= f.label :category %>
+      <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa', 'happy-hour', 'churrasco'], class:'form-control sm-3 mb-2 pb-5' %>
+    </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.text_field :price, class:'form-control sm-3 mb-2' %>
+    </div>
+    <div>
+      <%= f.label :status %>
+      <%= f.collection_check_boxes :status, [[true, 'Yes'], [false, "No"]], :first, :last %>
+    </div>
+    <div>
+      <%= f.submit %>
+      <%= link_to 'Voltar para o menu', products_path, class:'btn bg-light mp-5'%>
+    </div>
+<% end %>
+</div>
+</form>

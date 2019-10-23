@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :category
       t.float :price
       t.boolean :status, default: true
+      t.integer :amount
 
       t.timestamps
     end
