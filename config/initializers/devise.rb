@@ -18,7 +18,8 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'gabrielbdornas@gmail.com'
+  config.mailer_sender = 'contact@festoo.com.br' # Fack e-mail - remember that this e-mail doesn't exist
+  # in models/user there is a :confirmable option for this kind of configurations
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
