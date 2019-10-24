@@ -10,7 +10,7 @@ puts 'Deleting previous seed...'
 Product.destroy_all
 puts 'Creating products...'
 10.times do
-  product = Product.new(name: Faker::Appliance.equipment, description: Faker::Lorem.sentence, category: 'festa corporativa', price: 100, amount: 50)
+  product = Product.new(name: Faker::Appliance.equipment, description: Faker::Lorem.sentence, category: 'festa corporativa', price: 100)
   product.save
 end
 puts 'Finished!'
