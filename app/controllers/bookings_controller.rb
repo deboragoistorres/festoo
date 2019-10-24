@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:destroy, :edit, :update]
 
   def new
-    # @product = Product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @booking = Booking.new
   end
 
