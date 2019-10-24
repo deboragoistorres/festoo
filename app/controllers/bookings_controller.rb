@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_product, only: [:new, :create, :edit, :update]
+  before_action :find_product, only: [:create, :edit, :update]
   before_action :set_booking, only: [:destroy, :edit, :update]
 
   def new
@@ -50,4 +50,5 @@ class BookingsController < ApplicationController
 
   def user_params
     params.require(:booking).permit(:b_date, :e_date, :sched_qty, :deliv_status)
+  end
 end
