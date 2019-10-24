@@ -1,3 +1,4 @@
+<h2>Novo Produto</h2>
 <div class="container m-5 p-5">
   <form>
     <div class="form-group">
@@ -11,19 +12,18 @@
     </div>
     <div>
       <%= f.label :category %>
-      <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa', 'happy-hour', 'churrasco'], class:'form-control sm-3 mb-2 pb-5' %>
+      <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa'] %>
     </div>
     <div>
       <%= f.label :price %>
       <%= f.text_field :price, class:'form-control sm-3 mb-2' %>
     </div>
     <div>
-      <%= f.label :status %>
-      <%= f.collection_check_boxes :status, [[true, 'Yes'], [false, "No"]], :first, :last %>
+      <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no memento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
     </div>
     <div>
-      <%= f.submit %>
-      <%= link_to 'Voltar para o menu', products_path, class:'btn bg-light mp-5'%>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= link_to 'Voltar', products_path, class:'btn bg-light mp-5'%>
     </div>
 <% end %>
 </div>
