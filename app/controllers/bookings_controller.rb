@@ -50,4 +50,5 @@ class BookingsController < ApplicationController
 
   def user_params
     params.require(:booking).permit(:b_date, :e_date, :sched_qty, :deliv_status)
+  end
 end

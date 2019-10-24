@@ -7,16 +7,18 @@
 </div>
 <div class="container bg-light">
 <% @products.each do |product| %>
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2><%= product.name %></h2>
-      <p><%= product.description %></p>
-      <p><%= product.category %></p>
-      <p><%= product.price %></p>
-      <p><%= product.status %></p>
+  <%= link_to  product_path(product) do  %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2><%= product.name %></h2>
+        <p><%= product.description %></p>
+        <p><%= product.category %></p>
+        <p><%= product.price %></p>
+        <p><%= product.status %></p>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 
 </div>
