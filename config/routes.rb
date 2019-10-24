@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'bookings/new'
-  get 'bookings/edit'
+
   devise_for :users
   root to: 'pages#home'
-  resources :products
+  resources :products do
+    resources :bookings
+  end
 end
