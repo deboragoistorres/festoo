@@ -10,3 +10,4 @@ document.addEventListener("turbolinks:load", () => {
     dateFormat: "Y-m-d",
     locale: Portuguese
   });
+});
