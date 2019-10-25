@@ -1,27 +1,25 @@
+<div class="container mt-2 mb-5 mr-3">
 <div class="d-flex justify-content-between">
-  <h1>Ola Débora!</h1>
-  <div class="button-box">
+    <h1>Seus produtos cadastrados:</h1>
     <%= link_to 'new product', new_product_path, class:'btn btn-primary'  %>
   </div>
-
 </div>
-<div class="container bg-light">
-<% @products.each do |product| %>
-  <%= link_to  product_path(product) do  %>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2><%= product.name %></h2>
-        <p><%= product.description %></p>
-        <p><%= product.category %></p>
-        <p><%= product.price %></p>
-        <p><%= product.status %></p>
+  <div class="container">
+
+    <div class="row">
+    <% @products.each do |product| %>
+     <div class="col-sm-6 col-md-3">
+      <div class="card mb-5">
+        <%= link_to product.name, product_path(product), class:'btn btn-light justify-aling:center', style:'height: 100px'%>
+        <p>Descroção:<%= product.description %></p>
+        <p>Categoria:<%= product.category %></p>
+        <p>Valor: R$ <%= product.price %></p>
+        <p>Status do produto:<%= product.status ? "Disponível" : "Não disponível" %></p>
       </div>
     </div>
-  <% end %>
-<% end %>
-
+    <% end %>
+  </div>
+  </div>
 </div>
-
 
 
