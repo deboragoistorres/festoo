@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_172030) do
     t.string "category"
     t.float "price"
     t.boolean "status", default: true
+    t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
