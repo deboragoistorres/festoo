@@ -1,10 +1,10 @@
 <%= simple_form_for [@product, @booking] do |f| %>
   <%= f.label 'Data de Inicio' %>
-  <%= f.input :b_date %>
+  <%= f.input :b_date, label: false %>
   <%= f.label 'Data de Término' %>
-  <%= f.input :e_date %>
+  <%= f.input :e_date, label: false %>
   <%= f.label 'Quantidade a ser agendada' %>
-  <%= f.input :sched_qty %>
+  <%= f.input :sched_qty, label: false %>
 
   <%= f.submit 'Agendar' %>
 <% end %>
