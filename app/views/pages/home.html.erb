@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container mt-2 mb-5 mr-3">
+  <div class="d-flex justify-content-between">
+    <h1>Festoo: o lugar para sua festa</h1>
+    <div class="button-box">
+      <%= link_to 'new product', new_product_path, class:'btn btn-primary'  %>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <h2>Produtos cadastrados</h2>
+    <div class="row">
+    <% @products.each do |product| %>
+     <div class="col-sm-6 col-md-3">
+      <div class="card mb-5 p-3">
+        <%= link_to product_path(product), class:'btn btn-light justify-aling:center', style:'height: 100px' do %>
+         <h4><%= product.name %></h4>
+        <% end %>
+        <p>Descrição: <%= product.description %></p>
+        <p>Categoria: <%= product.category.capitalize %></p>
+        <p>Valor: R$ <%= number_with_precision(product.price, precision: 2) %></p>
+        <p>Status do produto: <%= product.status ? "Disponível" : "Não disponível" %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+
