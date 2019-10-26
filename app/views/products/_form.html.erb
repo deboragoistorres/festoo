@@ -2,30 +2,34 @@
   <div class="justify-center">
 <h2>Novo Produto</h2></div>
 <div class="container m-5 p-5">
-    <div class="form-group">
-      <%= simple_form_for(@product) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class:'form-control sm-3 mb-2' %>
-    </div>
-    <div>
-      <%= f.label :description %>
-      <%= f.text_area :description, class:'form-control sm-3 mb-2' %>
-    </div>
-    <div>
-      <%= f.label :category %>
-      <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa'] %>
-    </div>
-    <div>
-      <%= f.label :price %>
-      <%= f.text_field :price, class:'form-control sm-3 mb-2' %>
-    </div>
-    <div>
-      <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no memento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
-    </div>
-    <div>
-      <%= f.submit, class:"btn btn-secondary" %>
-      <%= link_to 'Voltar', products_path, class:'btn btn-info mp-5'%>
-    </div>
+  <div class="form-group">
+    <%= simple_form_for(@product) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control sm-3 mb-2' %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control sm-3 mb-2' %>
+  </div>
+  <div>
+    <%= f.label :category %>
+    <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa'] %>
+  </div>
+  <div>
+    <%= f.label :price %>
+    <%= f.text_field :price, class: 'form-control sm-3 mb-2' %>
+  </div>
+  <div>
+    <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no memento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
+  </div>
+  <div class="photo-upload">
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+  <div>
+    <%= f.submit 'Incluir', class: "btn btn-secondary" %>
+    <%= link_to 'Voltar', products_path, class: 'btn btn-info mp-5'%>
+  </div>
 <% end %>
 </div>
 </div>

@@ -10,6 +10,7 @@
     <% @products.each do |product| %>
      <div class="col-sm-6 col-md-3">
       <div class="card mb-5">
+        <%= cl_image_tag(product.photo, width: 150, height: 150, crop: :thumb) %>
         <%= link_to product.name, product_path(product), class:'btn btn-light justify-aling:center', style:'height: 100px'%>
         <p>Descroção:<%= product.description %></p>
         <p>Categoria:<%= product.category %></p>
