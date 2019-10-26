@@ -9,7 +9,8 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 2019_10_25_141226) do
+
+ActiveRecord::Schema.define(version: 2019_10_25_201647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +36,6 @@ ActiveRecord::Schema.define(version: 2019_10_25_141226) do
     t.string "category"
     t.float "price"
     t.boolean "status", default: true
-    t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
