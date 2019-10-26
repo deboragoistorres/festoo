@@ -15,6 +15,14 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# Cloudinary & Carrierwave
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+
+# Dotenv
+gem 'dotenv-rails', groups: [:development, :test]
+
+# Faker
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Devise Instalation

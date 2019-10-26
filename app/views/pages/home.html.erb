@@ -45,7 +45,8 @@
      <div class="col-sm-6 col-md-3">
       <div class="card mb-5 p-3">
         <%= link_to product_path(product), class:'btn btn-light justify-aling:center', style:'height: 100px' do %>
-         <h4><%= product.name %></h4>
+          <%= cl_image_tag(product.photo, width: 150, height: 150, crop: :thumb) %>
+          <h4><%= product.name %></h4>
         <% end %>
         <p>Descrição: <%= product.description %></p>
         <p>Categoria: <%= product.category.capitalize %></p>
