@@ -10,9 +10,9 @@
 <!-- <img src="./assets/images/FestooLogo.png" class="logo"> -->
 <%= image_tag("FestooLogo.png", class:"logo") %>
 
-<!-- Headings -->
+<!-- Headings <-->
 
-  <div class="container">
+  <div class="container-bkgimg">
     <h1>Festoo faz a festa!</h1>
     <p>Procure aqui tudo que precisa para fazer a festa. </p>
 
@@ -45,7 +45,8 @@
      <div class="col-sm-6 col-md-3">
       <div class="card mb-5 p-3">
         <%= link_to product_path(product), class:'btn btn-light justify-aling:center', style:'height: 100px' do %>
-         <h4><%= product.name %></h4>
+          <%= cl_image_tag(product.photo, width: 150, height: 150, crop: :thumb) %>
+          <h4><%= product.name %></h4>
         <% end %>
         <p>Descrição: <%= product.description %></p>
         <p>Categoria: <%= product.category.capitalize %></p>

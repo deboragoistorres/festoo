@@ -2,6 +2,7 @@
   <h1>Categoria: <%= @product.category.capitalize %></h1>
   <div class="d-flex justify-content-around">
     <div class="content-box">
+      <%= cl_image_tag(@product.photo, width: 150, height: 150, crop: :thumb) %>
       <h2>Produto: <%= @product.name %></h2>
       <h3>Descrição</h3>
         <p><%= @product.description %></p>
@@ -18,6 +19,14 @@
       <%= render 'bookings/form', product: @product, booking: @booking %>
     </div>
   </div>
+</div>
+<div class="bookings-display">
+  <% @product.bookings.each do |booking| %>
+    <h4>Reservado para o perído</h4>
+    <p>De: <%= booking.b_date %></p>
+    <p>Até: <%= booking.e_date %></p>
+  <% end %>
+
 </div>
 <%= link_to 'Back to products', products_path %>
 
