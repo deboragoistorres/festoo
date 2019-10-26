@@ -15,6 +15,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# Dotenv
+gem 'dotenv-rails', groups: [:development, :test]
+
+# Faker
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Devise Instalation
