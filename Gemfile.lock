@@ -216,6 +216,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bcrypt (~> 3.1.13)
   bootsnap
   devise
   dotenv-rails
