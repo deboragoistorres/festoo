@@ -16,6 +16,10 @@
     <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa'] %>
   </div>
   <div>
+    <%= f.label :amount %>
+    <%= f.text_field :amount, class: 'form-control sm-3 mb-2' %>
+  </div>
+  <div>
     <%= f.label :price %>
     <%= f.text_field :price, class: 'form-control sm-3 mb-2' %>
   </div>
