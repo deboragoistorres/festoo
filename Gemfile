@@ -15,8 +15,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-# Cloudinary
+# Cloudinary & Carrierwave
 gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 # Dotenv
 gem 'dotenv-rails', groups: [:development, :test]
