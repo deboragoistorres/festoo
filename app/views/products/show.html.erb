@@ -9,6 +9,9 @@
         <p><%= @product.price %></p>
       <h3>Disponibilidade</h3>
         <p><%= @product.status %></p>
+        <%= link_to 'Apagar Produto', product_path(@product.id),
+          method: :delete,
+          data: { confirm: "Are you sure?" }, class:'btn btn-link'%>
     </div>
     <div class="form-box">
       <%= render 'bookings/form', product: @product, booking: @booking %>
