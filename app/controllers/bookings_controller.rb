@@ -48,7 +48,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def user_params
-    params.require(:booking).permit(:b_date, :e_date, :sched_qty, :deliv_status)
+  def booking_params
+    params.require(:booking).permit(:b_date, :e_date, :sched_qty, :deliv_status, :user_id, :address, :product_id, :payment_status)
   end
 end
