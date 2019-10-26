@@ -1,2 +1,59 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+
+<!-- Background Image -->
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1498940757830-82f7813bf178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80);">
+
+<!-- logo -->
+
+<img src="./assets/images/Festoo Logo.png" class="logo">
+
+<!-- Headings -->
+
+  <div class="container">
+    <h1>Festoo faz a festa!</h1>
+    <p>Procure aqui tudo que precisa para fazer a festa. </p>
+
+<!-- Search Form -->
+
+    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="container mt-2 mb-5 mr-3">
+  <div class="d-flex justify-content-between">
+    <h1>Festoo: o lugar para sua festa</h1>
+    <div class="button-box">
+      <%= link_to 'new product', new_product_path, class:'btn btn-primary'  %>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <h2>Produtos cadastrados</h2>
+    <div class="row">
+    <% @products.each do |product| %>
+     <div class="col-sm-6 col-md-3">
+      <div class="card mb-5 p-3">
+        <%= link_to product_path(product), class:'btn btn-light justify-aling:center', style:'height: 100px' do %>
+         <h4><%= product.name %></h4>
+        <% end %>
+        <p>Descrição: <%= product.description %></p>
+        <p>Categoria: <%= product.category.capitalize %></p>
+        <p>Valor: R$ <%= number_with_precision(product.price, precision: 2) %></p>
+        <p>Status do produto: <%= product.status ? "Disponível" : "Não disponível" %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+
