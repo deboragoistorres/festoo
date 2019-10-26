@@ -4,14 +4,15 @@
     <div class="content-box">
       <h2>Produto: <%= @product.name %></h2>
       <h3>Descrição</h3>
-       <p><%= @product.description %></p>
+        <p><%= @product.description %></p>
       <h3>Price</h3>
         <p><%= @product.price %></p>
       <h3>Disponibilidade</h3>
         <p><%= @product.status %></p>
+        <%= link_to 'Editar Produto', edit_product_url(@product.id) %>
         <%= link_to 'Apagar Produto', product_path(@product.id),
           method: :delete,
-          data: { confirm: "Are you sure?" }, class:'btn btn-link'%>
+          data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class:'btn btn-link'%>
     </div>
     <div class="form-box">
       <%= render 'bookings/form', product: @product, booking: @booking %>
