@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_product, only: [:create, :edit, :update]
+  before_action :find_product, only: [:edit, :update]
   before_action :set_booking, only: [:destroy, :edit, :update]
 
   def new
@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # @product = Product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @booking.product = @product
     if @booking.save
       redirect_to product_path(@product)
