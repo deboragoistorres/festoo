@@ -5,4 +5,5 @@ class Product < ApplicationRecord
   validates :category, inclusion: { in: ['festa de aniversário', 'festa infantil', 'festa corporativa'] }
   validates :price, presence: true
   # validates :amount, presence: true
+  mount_uploader :photo, PhotoUploader
 end
