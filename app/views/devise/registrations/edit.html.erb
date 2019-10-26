@@ -4,20 +4,26 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :email, required: true, autofocus: true, label: 'Email' %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password,
+    <%= f.input :first_name, label: 'Primeiro Nome' %>
+
+    <%= f.input :last_name, label: 'Último Nome' %>
+
+    <%= f.input :billing_add, label: 'Endereço' %>
+
+    <%= f.input :password, label: 'Nova Senha', placeholder: 'Digite aqui sua nova senha',
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+    <%= f.input :password_confirmation, label: 'Confirme a Nova Senha', placeholder: 'Confirme aqui sua nova senha',
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
+    <%= f.input :current_password, label: 'Senha Atual',
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
