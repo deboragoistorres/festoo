@@ -1,26 +1,25 @@
-<div class="container mt-2 mb-5 mr-3">
-<div class="d-flex justify-content-between">
-    <h1>Seus produtos cadastrados:</h1>
-    <%= link_to 'new product', new_product_path, class:'btn btn-primary'  %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>CONFIRA<strong>NOSSOS</strong>PRODUTOS</strong>!</h1>
+    <%= link_to 'new product', new_product_path, class:'btn btn-primary'  %>Novos produtos</a>
   </div>
+</div>
+
 </div>
   <div class="container">
-
-    <div class="row">
-    <% @products.each do |product| %>
-     <div class="col-sm-6 col-md-3">
-      <div class="card mb-5">
-        <%= cl_image_tag(product.photo, width: 150, height: 150, crop: :thumb) %>
-        <%= link_to product.name, product_path(product), class:'btn btn-light justify-aling:center', style:'height: 100px'%>
-        <p>Descroção:<%= product.description %></p>
-        <p>Categoria:<%= product.category %></p>
-        <p>Valor: R$ <%= product.price %></p>
-        <p>Status do produto:<%= product.status ? "Disponível" : "Não disponível" %></p>
-      </div>
+<div class="row">
+<% @products.each do |product| %>
+<div class="card-trip col-sm-6 col-md-3 space-betwen pb-5">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class="pt-3" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= link_to product.name, product_path(product), class:'btn btn-light pt-2'%></h2>
+      <p class='pt-2'><%= product.description%></p>
     </div>
-    <% end %>
-  </div>
+    <h2 class="card-trip-pricing"><%= product.price %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
-
-
+    <% end %>
+ </div>
+    </div>
