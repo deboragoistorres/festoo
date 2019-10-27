@@ -30,16 +30,20 @@
 
 <!-- Cards -->
 
-<div class="card-grid">
-    <% @products.each do |product| %>
-        <%= link_to product_path(product), class:'btn btn-light justify-aling:center', style:'height: 100px' do %>
-          <%= cl_image_tag(product.photo, width: 150, height: 150, crop: :thumb) %>
-          <h4><%= product.name %></h4>
-        <% end %>
-        <p>Descrição: <%= product.description %></p>
-        <p>Categoria: <%= product.category.capitalize %></p>
-        <p>Valor: R$ <%= number_with_precision(product.price, precision: 2) %></p>
-        <p>Status do produto: <%= product.status ? "Disponível" : "Não disponível" %></p>
-    <% end %>
+<div class="row">
+<% @products.each do |product| %>
+<div class="card-trip m-4 col-md-3 m-3">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class="pt-3" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= link_to product.name, product_path(product), class:'btn btn-light pt-2'%></h2>
+      <p class='pt-2'><%= product.description%></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= product.price %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
 </div>
-
+    <% end %>
+ </div>
+</div>
+</div>
