@@ -53,13 +53,15 @@
  <div class="row-products">
 <% @products.each do |product| %>
 <div class="card-trip m-4 col-md-3 m-3">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg", class="pt-3" />
+  <%= link_to product_path(product), class: 'btn btn-light pt-2' do %>
+      <%= cl_image_tag(product.photo, width: 245.5, height: 200, class: 'pt-3') %>
+    <% end %>
   <div class="card-trip-infos">
     <div>
       <h2><%= link_to product.name, product_path(product), class:'btn btn-light pt-2'%></h2>
       <p class='pt-2'><%= product.description%></p>
     </div>
-    <h2 class="card-trip-pricing"><%= product.price %></h2>
+    <h2 class="card-trip-pricing"><%= number_to_currency(product.price, unit: "R$ ", separator: ",", delimiter: ".", precision: 2) %></h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
