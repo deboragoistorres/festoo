@@ -17,7 +17,13 @@
 
       <h2 class="card-trip-pricing"><%= number_to_currency(product.price, unit: "R$ ", separator: ",", delimiter: ".", precision: 2) %></h2>
 
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <% if product.user %>
+        <!-- ADAPTAR IF-STATEMENT PARA STRING DA FOTO DO USUARIO -->
+        <!-- Cortar e colar a linha de baixo no else -->
+        <%= image_tag "no-profile.png", class: 'card-trip-user avatar-bordered' %>
+      <% else %>
+        I<!-- INSIRA AQUI A IMAGE-TAG NO-PROFILE -->
+      <% end %>
     </div>
   </div>
 <% end %>
