@@ -13,12 +13,12 @@
         <p><%= @product.description %></p>
       <h4><%= number_to_currency(@product.price, unit: "R$ ", separator: ",", delimiter: ".", precision: 2) %></h4>
       <h4><%= @product.status ? 'Disponível' : 'Indisponível' %></h4>
-      <% if @product.user == current_user %>
+
         <%= link_to 'Editar Produto', edit_product_url(@product.id), class: 'btn btn-secondary' %>
         <%= link_to 'Apagar Produto', product_path(@product.id),
           method: :delete,
           data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class: 'btn btn-danger' %>
-      <% end %>
+
 
     </div>
     <div class="form-box">
