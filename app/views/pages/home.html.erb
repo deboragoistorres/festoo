@@ -2,10 +2,10 @@
 <%= render 'shared/banner' %>
 <!-- Cards -->
 
-<div class="row">
+<div class="row pt-4 d-flex justify-content-center">
 <% @products.each do |product| %>
   <div class="card-trip m-4 col-md-3 m-3">
-    <%= link_to product_path(product), class: 'btn btn-light pt-2' do %>
+    <%= link_to product_path(product) do %>
       <%= cl_image_tag(product.photo, width: 245.5, height: 200, class: 'pt-3') %>
     <% end %>
 
@@ -22,7 +22,7 @@
         <!-- Cortar e colar a linha de baixo no else -->
         <%= image_tag "no-profile.png", class: 'card-trip-user avatar-bordered' %>
       <% else %>
-        I<!-- INSIRA AQUI A IMAGE-TAG NO-PROFILE -->
+        <!-- INSIRA AQUI A IMAGE-TAG NO-PROFILE -->
       <% end %>
     </div>
   </div>
