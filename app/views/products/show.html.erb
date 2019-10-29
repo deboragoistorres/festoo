@@ -7,6 +7,7 @@
       <%= cl_image_tag(@product.photo, width: 250, height: 200, crop: :thumb) %>
         <h3>Descrição</h3>
         <p><%= @product.description %></p>
+
         <h4><%= number_to_currency(@product.price, unit: "R$ ", separator: ",", delimiter: ".", precision: 2) %></h4>
         <h4><%= @product.status ? 'Disponível' : 'Indisponível' %></h4>
         <% if @product.user == current_user %>
@@ -15,6 +16,21 @@
           method: :delete,
           data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class: 'btn btn-danger' %>
         <% end %>
+
+      <h4><%= number_to_currency(@product.price, unit: "R$ ", separator: ",", delimiter: ".", precision: 2) %></h4>
+      <h4><%= @product.status ? 'Disponível' : 'Indisponível' %></h4>
+
+        <%= link_to 'Editar Produto', edit_product_url(@product.id), class: 'btn btn-secondary' %>
+        <%= link_to 'Apagar Produto', product_path(@product.id),
+          method: :delete,
+          data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class: 'btn btn-danger' %>
+
+
+    </div>
+    <div class="form-box">
+      <h3>Agendar Produto</h3>
+      <%= render 'bookings/form', product: @product, booking: @booking %>
+
     </div>
       <div class="form-box col-md-5 col-sm-12">
         <h3>Agendar Produto</h3>
