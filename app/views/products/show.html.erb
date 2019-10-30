@@ -8,9 +8,9 @@
       <div class="justify-content-center mx-3">
       <%= cl_image_tag(@product.photo, width: 520, height: 400, crop: :thumb, class:"photoclass") %>
       </div>
-    </div>
 
-    <div class="content-box-color col-md-4 col-sm-12 mb-5">
+    </div>
+      <div class="content-box-color col-md-4 col-sm-12 mb-5">
         <h3 class="productView-reservar">Agendar Produto</h3>
         <%= render 'bookings/form', product: @product, booking: @booking %>
       </div>
