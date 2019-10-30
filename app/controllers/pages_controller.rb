@@ -3,7 +3,17 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @products = Product.all
+    if params[:query].present?
+      sql_query = " \
+        name @@ :query \
+        OR description @@ :query \
+        OR category @@ :query \
+      "
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+      # If another table is to be used include '.joins(:table_name)' before .where
+    else
+      @products = Product.all
+    end
   end
 
   def my_products
