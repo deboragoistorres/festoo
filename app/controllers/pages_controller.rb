@@ -6,6 +6,8 @@ class PagesController < ApplicationController
     @products = Product.all
   end
 
-  def landing
+  def my_products
+    @products = Product.where(user: current_user)
+    @bookings = Booking.joins(:product).where(products: { user: current_user })
   end
 end
