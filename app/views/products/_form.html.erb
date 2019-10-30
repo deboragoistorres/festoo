@@ -4,30 +4,30 @@
 <div class="container m-5 p-5">
   <div class="form-group">
     <%= simple_form_for(@product) do |f| %>
-    <%= f.label :name %>
+    <%= f.label :name, label: "Nome" %>
     <%= f.text_field :name, class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
-    <%= f.label :description %>
+    <%= f.label :description, label: "Descrição"  %>
     <%= f.text_area :description, class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
-    <%= f.label :category %>
+    <%= f.label :category, label: "Categoria"  %>
     <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa'] %>
   </div>
   <div>
-    <%= f.label :amount %>
+    <%= f.label :amount, label: "Quantidade"  %>
     <%= f.text_field :amount, class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
-    <%= f.label :price %>
+    <%= f.label :price, label: "Preço"  %>
     <%= f.text_field :price, class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
     <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no momento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
   </div>
   <div class="photo-upload">
-    <%= f.input :photo %>
+    <%= f.input :photo, label: "Foto"  %>
     <%= f.input :photo_cache, as: :hidden %>
   </div>
   <div>
