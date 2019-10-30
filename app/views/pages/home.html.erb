@@ -7,7 +7,7 @@
   <div class="card-trip m-3 col-md-3 p-3">
     <div>
       <%= link_to product_path(product) do %>
-        <%= cl_image_tag(product.photo, width: 250, height: 200, class: 'mx-3') %>
+        <%= cl_image_tag(product.photo, width: '100%', height: 200, class: 'card-image') %>
       <% end %>
 
       <div class="card-trip-infos">
