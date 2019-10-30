@@ -16,12 +16,10 @@
     <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa'] %>
   </div>
   <div>
-    <%= f.label :amount, label: "Quantidade"  %>
-    <%= f.text_field :amount, class: 'form-control sm-3 mb-2' %>
+    <%= f.input :amount, label: "Quantidade", class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
-    <%= f.label :price, label: "Preço"  %>
-    <%= f.text_field :price, class: 'form-control sm-3 mb-2' %>
+    <%= f.input :price, label: "Preço" , class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
     <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no momento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
