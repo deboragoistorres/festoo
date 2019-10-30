@@ -4,18 +4,23 @@
 <div class="row mt-4 justify-content-center">
   <h1 class="title-maior"><%= @product.category.capitalize %></h1>
 </div>
-  <div class="productView">
+
+<div class="productView">
   <div class="row p-3 justify-content-center mt-4">
-  <div class="content-box col-md-5 col-sm-12">
-  <div class=" position-photo justify-content-center">
-    <%= cl_image_tag(@product.photo, width: 520, height: 400, crop: :thumb, class:"photoclass") %>
-    <i><h2 class="productView-title ">Produto: <%= @product.name %></h2></i>
-  </div>
-  </div>
-  <div class="content-box-color col-md-4 col-sm-12 mb-5">
-    <h3 class="productView-reservar">Agendar Produto</h3>
-    <%= render 'bookings/form', product: @product, booking: @booking %>
-  </div>
+    <div class="content-box col-md-5 col-sm-12">
+      <div class=" position-photo justify-content-center">
+        <%= cl_image_tag(@product.photo, width: 520, height: 400, crop: :thumb, class:"photoclass") %>
+        <i><h2 class="productView-title ">Produto: <%= @product.name %></h2></i>
+      </div>
+    </div>
+      <div class="content-box-color col-md-4 col-sm-12 mb-5">
+        <h3 class="productView-reservar">Agendar Produto</h3>
+        <%= render 'bookings/form', product: @product, booking: @booking %>
+      </div>
+
+</div>
+</div>
+
 </div>
 </div>
 
