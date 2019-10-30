@@ -5,9 +5,9 @@
       <div class="productView">
   <div class="row p-3 justify-content-center mt-4">
     <div class="content-box col-md-5 col-sm-12">
-      <h2 class="productView-title d-flex justify-content-center">Produto: <%= @product.name %></h2>
-      <div class="justify-content-center mx-3">
+      <div class=" position-photo justify-content-center">
       <%= cl_image_tag(@product.photo, width: 520, height: 400, crop: :thumb, class:"photoclass") %>
+      <i><h2 class="productView-title ">Produto: <%= @product.name %></h2></i>
       </div>
     </div>
       <div class="content-box-color col-md-4 col-sm-12 mb-5">

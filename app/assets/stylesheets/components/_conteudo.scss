@@ -1,13 +1,14 @@
 .conteudo {
-  padding-top: 200px;
+  padding-top: 400px;
 }
 
 .productView-title {
     color: black;
-    font-size: 2.25rem;
+    font-size: 1.00rem;
     font-weight: 500;
     opacity: 0.5;
-    margin-top: 0px;
+    margin-top: 20px;
+    margin-left: 200px;
 }
 
 .productView-reservar {
@@ -20,9 +21,13 @@
     opacity: 1;
 }
 
+.position-photo {
+  margin-left: 70px;
+}
 .photoclass {
   border-radius: 10px;
   margin-top: 10px;
+  justify-content: center;
 }
 
 
@@ -36,8 +41,8 @@
 }
 
 .title-maior {
-  color: orange;
-  opacity: 1;
+  color: black;
+  opacity: 0.5;
   font-size: 3.25rem;
   font-weight: 500;
   margin-bottom: .5rem;
