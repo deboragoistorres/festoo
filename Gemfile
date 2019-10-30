@@ -6,6 +6,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '6.0.0'
+gem 'turbolinks'
 gem 'redis'
 
 gem 'autoprefixer-rails'
