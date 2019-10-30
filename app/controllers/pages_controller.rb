@@ -10,4 +10,13 @@ class PagesController < ApplicationController
     @products = Product.where(user: current_user)
     @bookings = Booking.joins(:product).where(products: { user: current_user })
   end
+
+  def sobre
+  end
+
+  def fale_conosco
+  end
+
+  def termos_uso
+  end
 end
