@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
+  get "meus-produtos", to: "pages#my_products"
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
