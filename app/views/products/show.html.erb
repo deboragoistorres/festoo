@@ -14,6 +14,7 @@
         <h3 class="productView-reservar">Agendar Produto</h3>
         <%= render 'bookings/form', product: @product, booking: @booking %>
       </div>
+
       <div class="bookings-display">
         <% @product.bookings.each do |booking| %>
           <h4>Reservado para o(s) perído(s)</h4>
