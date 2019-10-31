@@ -12,16 +12,11 @@
   <div>
     <%= f.input :amount, label: "Quantidade", class: 'form-control sm-3 mb-2' %>
   </div>
-<<<<<<< HEAD
-  <div class=>
-    <%= f.input :status, as: :radio_buttons, collection: [[true, '    Disponível no momento'], [false, "    Indisponivel no momento"]], label_method: :second, value_method: :first %>
-=======
   <div>
     <%= f.input :price, label: "Preço" , class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
     <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no momento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
->>>>>>> 92389fbb28002222e8802fa808b90c00a475402c
   </div>
   <div class="photo-upload">
     <%= f.input :photo, label: "Foto"  %>
