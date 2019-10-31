@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container mt-5 py-5">
   <div class="justify-center">
-<h2>Novo Produto</h2></div>
-<div class="container m-5 p-5">
+<h2 class="text-center">Novo Produto</h2></div>
+<div class="container m-5 p-2">
   <div class="form-group">
     <%= simple_form_for(@product) do |f| %>
     <%= f.label :name %>
@@ -20,8 +20,8 @@
     <%= f.label :price %>
     <%= f.text_field :price, class: 'form-control sm-3 mb-2' %>
   </div>
-  <div>
-    <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no memento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
+  <div class=>
+    <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no momento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
   </div>
   <div class="photo-upload">
     <%= f.input :photo %>
