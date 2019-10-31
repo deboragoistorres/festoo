@@ -2,14 +2,12 @@
   <div class="justify-center">
 <h2>Novo Produto</h2></div>
 <div class="container m-5 p-5">
+  <%= simple_form_for(@product) do |f| %>
   <div class="form-group">
-    <%= simple_form_for(@product) do |f| %>
-    <%= f.label :name, label: "Nome" %>
-    <%= f.text_field :name, class: 'form-control sm-3 mb-2' %>
+    <%= f.input :name, label: "Nome", class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
-    <%= f.label :description, label: "Descrição"  %>
-    <%= f.text_area :description, class: 'form-control sm-3 mb-2' %>
+    <%= f.input :description, label: "Descrição", class: 'form-control sm-3 mb-2' %>
   </div>
   <div>
     <%= f.label :category, label: "Categoria"  %>
