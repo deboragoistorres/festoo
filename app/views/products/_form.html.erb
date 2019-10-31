@@ -1,8 +1,3 @@
-<div class="container">
-<div class="container m-5 p-5">
-  <div class="justify-center">
-    <h2>Novo Produto</h2>
-  </div>
 <%= simple_form_for(@product) do |f| %>
   <div class="form-group">
     <%= f.input :name, label: "Nome", class: 'form-control sm-3 mb-2' %>
@@ -28,10 +23,9 @@
     <%= f.input :photo_cache, as: :hidden %>
   </div>
   <div>
-    <%= f.submit 'Incluir', class: "btn btn-secondary" %>
     <%= link_to 'Voltar', products_path, class: 'btn btn-info mp-5'%>
+    <%= f.submit 'Incluir', class: "btn btn-secondary" %>
+
   </div>
 <% end %>
-</div>
-</div>
 
