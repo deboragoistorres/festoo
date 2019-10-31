@@ -1,8 +1,4 @@
-<div class="container">
-  <div class="justify-center">
-<h2>Novo Produto</h2></div>
-<div class="container m-5 p-5">
-  <%= simple_form_for(@product) do |f| %>
+<%= simple_form_for(@product) do |f| %>
   <div class="form-group">
     <%= f.input :name, label: "Nome", class: 'form-control sm-3 mb-2' %>
   </div>
@@ -31,5 +27,4 @@
     <%= link_to 'Voltar', products_path, class: 'btn btn-info mp-5'%>
   </div>
 <% end %>
-</div>
-</div>
+
