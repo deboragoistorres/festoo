@@ -27,10 +27,13 @@
   <div class="container">
     <div class="col-sm-7 mx-5 botoes-alinhamento">
     <%= link_to 'Voltar para produtos', products_path, class:"btn btn-primary" %>
-    <%= link_to 'Editar Produto', edit_product_path(@product.id), class:"btn btn-warning" %>
-    <%= link_to 'Apagar Produto', product_path(@product.id),
-          method: :delete,
-          data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class:'btn btn-danger' %></h3>
+    <% if current_user.id == @product.user_id %>
+      <%= link_to 'Editar Produto', edit_product_path(@product.id), class:"btn btn-warning" %>
+      <%= link_to 'Apagar Produto', product_path(@product.id),
+            method: :delete,
+            data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class:'btn btn-danger' %></h3>
+    <% else %>
+    <% end %>
     </div>
   <div class="bookings-display editar-bookins">
     <div class="row">
