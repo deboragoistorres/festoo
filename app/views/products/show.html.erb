@@ -13,11 +13,13 @@
         <i><h2 class="productView-title ">Produto: <%= @product.name %></h2></i>
       </div>
     </div>
+      <% if current_user.id != @product.user_id %>
       <div class="content-box-color col-md-4 col-sm-12 mb-5">
-        <h3 class="productView-reservar">Agendar Produto</h3>
-        <%= render 'bookings/form', product: @product, booking: @booking %>
-      </div>
 
+        <h3 class="productView-reservar">Agendar Produto</h3>
+          <%= render 'bookings/form', product: @product, booking: @booking %>
+      </div>
+      <% end %>
 </div>
 </div>
 
@@ -27,10 +29,13 @@
   <div class="container">
     <div class="col-sm-7 mx-5 botoes-alinhamento">
     <%= link_to 'Voltar para produtos', products_path, class:"btn btn-primary" %>
-    <%= link_to 'Editar Produto', edit_product_path(@product.id), class:"btn btn-warning" %>
-    <%= link_to 'Apagar Produto', product_path(@product.id),
-          method: :delete,
-          data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class:'btn btn-danger' %></h3>
+    <% if current_user.id == @product.user_id %>
+      <%= link_to 'Editar Produto', edit_product_path(@product.id), class:"btn btn-warning" %>
+      <%= link_to 'Apagar Produto', product_path(@product.id),
+            method: :delete,
+            data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class:'btn btn-danger' %></h3>
+    <% else %>
+    <% end %>
     </div>
   <div class="bookings-display editar-bookins">
     <div class="row">
